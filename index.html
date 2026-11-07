@@ -1,14 +1,585 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Assignment 1</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
 
-<body>
-    <h1>Welcome to Assignment 1</h1>
-    <!-- External JavaScript -->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="ABHARNA Port Systems - integrated electronic gateway for Jeddah Islamic Port">
+    <meta name="keywords" content="port, cargo tracking, container, Jeddah, HTML, CSS, JavaScript">
+    <meta name="author" content="CIS 24 - Group 3">
+
+    <title>ABHARNA Port Systems</title>
+
+    <!--Linking external css and js -->
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 
+    <!--Internal css-->
+    <style>
+        #hero h1 {
+            font-size: 54px;
+            text-shadow: 2px 2px 4px #d9d2c2;
+        }
+
+        #hero h1 em {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        #hero h1 span {
+            color: #2b3550;
+        }
+
+        #benefits {
+            background-color: #fbfaf6;
+        }
+
+        .addbox {
+            border: 3px double #a98550;
+            padding: 18px;
+            background-color: #fbfaf6;
+        }
+
+        .teamtable td.name {
+            color: #0f1b33;
+        }
+
+        .sitemap {
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .sitemap li {
+            margin-bottom: 6px;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figure img {
+            width: 100%;
+            border: 1px solid #0f1b33;
+            box-shadow: 6px 6px 0 #d9d2c2;
+        }
+
+        figcaption {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+    </style>
+
+</head>
+
+<body onload="showPage('home')">
+    <a id="top"></a>
+
+    <header id="topbar">
+        <div class="wrap">
+            <div class="brand">
+                <img src="logo.jpeg" alt="ABHARNA logo" width="69" height="61" usemap="#logomap">
+                
+                <map name="logomap">
+                 <area shape="rect" coords="0,0,69,61" href="#top" onclick="showPage('about')" alt="About Us"title="About Us">
+                </map>
+                
+                <a href="#top" onclick="showPage('home')" class="brandtext">ABHARNA<br><span class="sub">PORT SYSTEMS</span></a>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="#top" onclick="showPage('home')" id="menu_home">Home</a></li>
+                    <li><a href="#top" onclick="showPage('about')" id="menu_about">About Us</a>
+                        <ul>
+                            <li><a href="#team" onclick="showPage('about')">Our Team</a></li>
+                            <li><a href="#sitemap" onclick="showPage('about')">Site Map</a></li>
+                        </ul>
+                    </li>
+      
+                    <li><a href="#top" onclick="showPage('login')" id="menu_login">Login</a></li>
+                    <li><a href="#top" onclick="showPage('signup')" id="menu_signup">Sign Up</a></li>              
+                    <li><a href="#top" onclick="showPage('track')" id="menu_track">Track Cargo</a></li>
+                </ul>
+            </nav>
+
+            <div class="clear"></div>
+        </div>
+
+    </header>
+
+    <div class="page" id="page_home">
+
+        <section id="hero" class="wrap">
+            <div class="col-text">
+                <span class="section-label">JEDDAH ISLAMIC PORT - INTEGRATED OPERATIONS</span>
+                <h1><em>We have set sail.</em><br><span>ABHARNA Port Systems.</span></h1>
+                <p class="lead">An integrated electronic gateway for managing and tracking maritime operations at Jeddah
+                    Islamic Port &mdash; real-time visibility from sea to shore.</p>
+
+                <p style="color: #0f1b33; font-weight: bold;">Where is my container? Find out in three clicks.</p>
+                <p>
+                    <a class="btn dark" href="#top" onclick="showPage('track')">Track Cargo &rarr;</a>
+                    &nbsp;
+                    <a class="btn" href="#top" onclick="showPage('login')">Sign In</a>
+                    &nbsp;
+                    <a href="#problem" style="border-bottom: 1px solid #a98550; font-size: 12px;">Read the brief</a>
+                </p>
+            </div>
+
+            <div class="col-pic">
+                <div class="picbox">
+                    <div class="picwin">
+                        <img id="mainpic" src="hero.jpg" alt="Containers at Jeddah Islamic Port">
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </section>
+
+
+        <!--Content-->
+        <div class="wrap">
+
+            <!--intrnal linking-->
+            <p class="toc">
+                <strong>On this page:</strong>
+                <a href="#problem">The problem</a> |
+                <a href="#solution">Our solution</a> |
+                <a href="#benefits">Benefits</a> |
+                <a href="#actors">Who uses ABHARNA</a> |
+                <a href="#checklist">Shipment checklist</a>
+            </p>
+
+            <!-- the problem-->
+            <article id="problem" class="band">
+                <span class="section-label">THE PROBLEM</span>
+                <h2>The problem we want to solve</h2>
+                <p>In many ports, information about ships and containers is spread over phone calls, paper forms and
+                    separate systems. Everyone who works with a container needs the same answer &mdash; <em>where is it
+                        and what is its status?</em> &mdash; but each person has to ask somebody else.</p>
+                <ul class="checks">
+                    <li>Customers cannot see where their cargo is, so they call the port again and again.</li>
+                    <li>Customs brokers learn about holds late, which delays the clearance.</li>
+                    <li>Managers have no single view of ships, containers and customs holds.</li>
+                </ul>
+            </article>
+
+            <!--the solution -->
+            <article id="solution" class="band">
+                <span class="section-label">THE SOLUTION</span>
+                <h2>ABHARNA: one gateway for the whole port</h2>
+                <p>ABHARNA is the digital chart that brings the operations of the port into a single, transparent view. It works in four simple steps:</p>
+                <ol class="steps">
+                    <li>Port staff <strong>register</strong> the ships and containers.</li>
+                    <li>Every movement updates the container <strong>status</strong> (registered, in transit, at port,
+                        customs hold, cleared, released).</li>
+                    <li>Customers <a href="#top" onclick="showPage('track')"><strong>track</strong></a> their cargo with only the container number.</li>
+                    <li>Customs brokers and managers see holds and clearance in the same place.</li>
+                </ol>
+            </article>
+
+            <!-- the benefits-->
+            <section id="benefits" class="band">
+                <span class="section-label">THE BENEFIT</span>
+                <h2>Why it helps</h2>
+                <div class="card">
+                    <p class="num">01</p>
+                    <h3>Real-time tracking</h3>
+                    <p>Status, yard location and estimated arrival for every container.</p>
+                </div>
+                <div class="card">
+                    <p class="num">02</p>
+                    <h3>Fewer phone calls</h3>
+                    <p>Customers find the answer themselves, day or night.</p>
+                </div>
+                <div class="card">
+                    <p class="num">03</p>
+                    <h3>Faster clearance</h3>
+                    <p>Brokers see customs holds instantly and act on them.</p>
+                </div>
+                <div class="card">
+                    <p class="num">04</p>
+                    <h3>One place</h3>
+                    <p>Staff, managers, customers and brokers share the same data.</p>
+                </div>
+                <div class="clear"></div>
+            </section>
+
+            <!--table of actors -->
+            <section id="actors" class="band">
+                <span class="section-label">USERS</span>
+                <h2>Five actors, one gateway</h2>
+                <table class="tbl">
+                    <caption>Who uses ABHARNA and what they get</caption>
+                    <thead>
+                        <tr>
+                            <th colspan="3">User roles</th>
+                        </tr>
+                        <tr>
+                            <th>Actor</th>
+                            <th>What they do</th>
+                            <th>Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name">Port Staff</td>
+                            <td>Register ships, berths and containers.</td>
+                            <td>Less paperwork</td>
+                        </tr>
+                        <tr>
+                            <td class="name">Port Manager</td>
+                            <td>Monitor vessels and container distribution.</td>
+                            <td>One clear overview</td>
+                        </tr>
+                        <tr>
+                            <td class="name">Customer / Consignee</td>
+                            <td>Track cargo and read notifications.</td>
+                            <td>Know where the cargo is</td>
+                        </tr>
+                        <tr>
+                            <td class="name">Customs Broker</td>
+                            <td>Manage the clearance queue.</td>
+                            <td>Faster clearance</td>
+                        </tr>
+                        <tr>
+                            <td class="name">Shipping Rep</td>
+                            <td>Follow vessels and their cargo.</td>
+                            <td>Better planning</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">All five roles can sign in from the login page.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <!--add/clear shipments-->
+            <section id="checklist" class="band">
+                <span class="section-label">TRY IT</span>
+                <h2>Plan your shipment checklist</h2>
+                <p>Write what you need before the cargo arrives (for example: <em>customs papers</em>) and add it to the list.</p>
+                <div class="addbox">
+                    <label for="newItem" class="fl">NEW ITEM</label>
+                    <input type="text" id="newItem" class="field" placeholder="Write an item" onfocus="highlight(this)" onblur="normal(this)">
+                    <button type="button" class="btn dark" onclick="addItem()">Add to list</button>
+                    <button type="button" class="btn" onclick="clearList()">Clear list</button>
+                    <p id="listMsg" class="msg">The list is empty.</p>
+                    <ul id="checklistItems"></ul>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+    <div class="page" id="page_about">
+
+        <main class="wrap" style="padding-top: 30px;">
+
+            <span class="section-label">HERITAGE MEETS DATA</span>
+            <h1>About Us</h1>
+
+            <p class="toc">
+                <strong>On this page:</strong>
+                <a href="#project">The project</a> |
+                <a href="#team">Our team</a> |
+                <a href="#sitemap">Site map</a> 
+            </p>
+
+            <article id="project" class="band" style="border-top: none;">
+                <div class="col-text" style="padding-top: 0;">
+                    <h2>Built for the gateway of the Red Sea</h2>
+                    <p>Jeddah Islamic Port has been the kingdom's maritime artery for centuries.
+                        <strong>ABHARNA</strong> is the digital chart that brings its operations into a single, transparent, real-time view.
+                    </p>
+                    
+                </div>
+
+                <div class="col-pic" style="padding-top: 0;">
+                    <figure>
+                        <img src="port.jpg" alt="Cranes and containers at the port">
+                        <figcaption>Cranes and containers at Jeddah Islamic Port.</figcaption>
+                    </figure>
+                </div>
+                <div class="clear"></div>
+            </article>
+
+            <section id="team" class="band">
+                <span class="section-label">OUR TEAM</span>
+                <h2>Our team &mdash; Group No. 3</h2>
+                <table class="tbl teamtable">
+                    <caption>Team members</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role in the group</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name">Yara Alharbi</td>
+                            <td>Team member</td>
+                        </tr>
+                        <tr>
+                            <td class="name">Dhay Alghamdi</td>
+                            <td>Team member</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="sitemap" class="band">
+                <span class="section-label">NAVIGATION</span>
+                <h2>Site map</h2>
+                <ul class="sitemap">
+                    <li><a href="#top" onclick="showPage('home')">Home</a>
+                        <ul>
+                            <li><a href="#problem" onclick="showPage('home')">The problem</a></li>
+                            <li><a href="#solution" onclick="showPage('home')">Our solution</a></li>
+                            <li><a href="#benefits" onclick="showPage('home')">Benefits</a></li>
+                            <li><a href="#actors" onclick="showPage('home')">Who uses ABHARNA</a></li>
+                            <li><a href="#checklist" onclick="showPage('home')">Shipment checklist</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#top" onclick="showPage('about')">About Us</a></li>
+                    <li><a href="#top" onclick="showPage('track')">Track Cargo</a></li>
+                    <li><a href="#top" onclick="showPage('login')">Login</a></li>
+                    <li><a href="#top" onclick="showPage('signup')">Sign Up</a></li>
+                </ul>
+            </section>
+        </main>
+
+    </div>
+    <div class="page" id="page_login">
+
+        <main class="wrap" style="padding-top: 30px;">
+
+            <div class="formcol">
+                <span class="section-label">ABHARNA &middot; AUTH</span>
+                <h1>Sign in to ABHARNA</h1>
+                <p class="lead">Use your account to follow ships and containers at Jeddah Islamic Port.</p>
+
+                <!--login form -->
+                <div id="loginBox" class="formbox">
+                    <form name="loginForm" method="post" action="login.html" onsubmit="return validateLogin()"
+                        onreset="resetLogin()">
+
+                        <label for="email" class="fl">EMAIL</label>
+                        <input type="email" id="email" name="email" class="field" placeholder="name@abharna.sa" required autofocus onfocus="highlight(this)" onblur="normal(this)">
+                        <label for="password" class="fl">PASSWORD</label>
+                        <input type="password" id="password" name="password" class="field" minlength="8" placeholder="At least 8 characters" required onfocus="highlight(this)" onblur="normal(this)">
+
+                        <p id="loginMsg" class="msg"></p>
+
+                        <input type="submit" class="btn dark wide" value="Sign In">
+                        <p><input type="reset" class="btn" value="Clear"></p>
+                        <p class="small">Don't have an account? <a href="#top" onclick="showPage('signup')" style="color: #a98550;">Register here</a></p>
+                    </form>
+                </div>
+
+                <!-- js- after correct login -->
+                <div id="welcomeBox" class="formbox" style="display: none;">
+                    <span class="label">SIGNED IN</span>
+                    <h2 id="welcomeTitle">Welcome!</h2>
+                    <p id="welcomeRole"></p>
+                    <p class="label">YOUR TOOLS</p>
+                    <ul id="toolList" class="checks"></ul>
+                    <p>
+                        <a class="btn dark" href="#top" onclick="showPage('track')">Track Cargo</a>
+                        <button type="button" class="btn" onclick="signOut()">Sign out</button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="sidecol">
+                <span class="label">DEMO ACCOUNTS</span>
+                <p class="small">Click a row to fill the form.</p>
+                <table class="tbl">
+                    <caption>Accounts you can use to test the site</caption>
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="fillDemo('staff@abharna.sa', 'Staff.port')">
+                            <td class="name">Port Staff</td>
+                            <td>staff@abharna.sa</td>
+                            <td>Staff.port</td>
+                        </tr>
+                        <tr onclick="fillDemo('manager@abharna.sa', 'Manager.port')">
+                            <td class="name">Port Manager</td>
+                            <td>manager@abharna.sa</td>
+                            <td>Manager.port</td>
+                        </tr>
+                        <tr onclick="fillDemo('customer@abharna.sa', 'Customer.port')">
+                            <td class="name">Customer</td>
+                            <td>customer@abharna.sa</td>
+                            <td>Customer.port</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clear"></div>
+        </main>
+
+    </div>
+    <div class="page" id="page_signup">
+
+        <main class="wrap" style="padding-top: 30px;">
+            <span class="section-label">ABHARNA &middot; REGISTER</span>
+            <h1>Create an account</h1>
+            <p class="lead">Fill in the form. Fields marked with * are required.</p>
+
+            <div id="signupBox" class="formbox big">
+                <form name="signupForm" method="post" action="signup.html" onsubmit="return validateSignup()"
+                    onreset="resetSignup()">
+
+                    <label for="fullname" class="fl">FULL NAME *</label>
+                    <input type="text" id="fullname" name="fullname" class="field" size="20" maxlength="25" 
+                    placeholder="Your full name" required autofocus onfocus="highlight(this)" onblur="normal(this)">
+
+                    <label for="su_email" class="fl">EMAIL *</label>
+                    <input type="email" id="su_email" name="email" class="field" placeholder="name@gmail.com" required
+                        onfocus="highlight(this)" onblur="normal(this)">
+
+                    <label for="phone" class="fl">PHONE (05XXXXXXXX) *</label>
+                    <input type="tel" id="phone" name="phone" class="field" placeholder="0512345678" pattern="[0-9]{10}"
+                        required onfocus="highlight(this)" onblur="normal(this)">
+
+                    <label for="su_password" class="fl">PASSWORD (8 OR MORE CHARACTERS) *</label>
+                    <input type="password" id="su_password" name="password" class="field" minlength="8" required
+                        onfocus="highlight(this)" onblur="checkStrength(); normal(this)">
+
+                    <label for="accountType" class="fl">ACCOUNT TYPE *</label>
+                    <select id="accountType" name="accountType" class="field" onfocus="highlight(this)" onblur="normal(this)"required>
+                        <option value="">-- choose --</option>
+                        <option value="Customer">Customer</option>
+                        <option value="Customs Broker">Customs Broker</option>
+                        <option value="Shipping Rep">Shipping Rep</option>
+                    </select>
+
+                    <span class="fl">HOW SHOULD WE CONTACT YOU?</span>
+                    <p>
+                        <input type="radio" id="viaEmail" name="contact" value="email" checked>
+                        <label for="viaEmail">Email</label>
+                        &nbsp;
+                        <input type="radio" id="viaSms" name="contact" value="sms">
+                        <label for="viaSms">SMS</label>
+                    </p>
+
+                    <label for="notes" class="fl">NOTES</label>
+                    <textarea id="notes" name="notes" class="field" rows="3" cols="30"
+                        placeholder="Anything we should know?" onfocus="highlight(this)"
+                        onblur="normal(this)">
+                    </textarea>
+
+                    <p id="signupMsg" class="msg"></p>
+
+                    <input type="submit" class="btn dark" value="Register">
+                    <input type="reset" class="btn" value="Clear">
+                    <p class="small">Already have an account? <a href="#top" onclick="showPage('login')" style="color: #a98550;">Sign in</a></p>
+                </form>
+            </div>
+
+            <!--js after correct registration -->
+            <div id="signupResult"></div>
+        </main>
+
+    </div>
+    <div class="page" id="page_track">
+
+        <main class="wrap" style="padding-top: 30px;">
+            <span class="section-label">ABHARNA &middot; TRACKING</span>
+            <h1>Real-time cargo tracking</h1>
+            <p class="lead">Enter your container number to see status, location and estimated arrival.</p>
+
+            <div class="formbox big">
+                <form name="trackForm" method="post" action="track.html" onsubmit="return trackContainer()"
+                    onreset="resetTrack()">
+                    <label for="container" class="fl">CONTAINER NUMBER</label>
+                    <input type="search" id="container" name="container" class="field" placeholder="e.g. ABHU1234567" autofocus onfocus="highlight(this)" onblur="normal(this)">
+                    <input type="submit" class="btn dark" value="Track">
+                    <input type="reset" class="btn" value="Clear">
+                </form>
+            </div>
+
+            <!--js -->
+            <div id="trackResult"></div>
+
+            <div class="divider"></div>
+
+            <h3>Sample container numbers</h3>
+            <p class="small">Double-click a number to write it in the search box.</p>
+            <table class="tbl">
+                <caption>Containers you can search for</caption>
+                <thead>
+                    <tr>
+                        <th>Container number</th>
+                        <th>Cargo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="name" ondblclick="fillSample('ABHU7771234')">ABHU7771234</td>
+                        <td>Industrial Machinery</td>
+                    </tr>
+                    <tr>
+                        <td class="name" ondblclick="fillSample('CMAU3300991')">CMAU3300991</td>
+                        <td>Pharmaceuticals</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+    </div>
+
+    <footer id="footer">
+        <div class="wrap">
+            <p>
+                <a href="#top" onclick="showPage('home')">Home</a> |
+                <a href="#top" onclick="showPage('about')">About Us</a> |
+                <a href="#top" onclick="showPage('track')">Track Cargo</a> |
+                <a href="#top" onclick="showPage('login')">Login</a> |
+                <a href="#top" onclick="showPage('signup')">Sign Up</a> |
+                <a href="#topbar">Back to top &uarr;</a>
+            </p>
+            <p>ABHARNA PORT SYSTEMS &middot; CIS 24 &middot; CPIS358</p>
+        </div>
+    </footer>
+
+    <!-- EMBEDDED JavaScript -->
+    <script>
+        var itemCount = 0;
+
+        //adds a new <li> element
+        function addItem() {
+            var text = document.getElementById("newItem").value;
+            if (text == "") {
+                document.getElementById("listMsg").innerHTML = "Please write an item first.";
+                document.getElementById("listMsg").style.color = "#c4552f";
+            } else {
+                document.getElementById("checklistItems").innerHTML += "<li>" + clean(text) + "</li>";
+                itemCount++;
+                document.getElementById("listMsg").innerHTML = "Items in the list: " + itemCount;
+                document.getElementById("listMsg").style.color = "#2f7d52";
+                document.getElementById("newItem").value = "";
+            }
+        }
+
+        // onclick on "Clear list"- removes all the <li> elements
+        function clearList() {
+            document.getElementById("checklistItems").innerHTML = "";
+            itemCount = 0;
+            document.getElementById("listMsg").innerHTML = "The list is empty.";
+            document.getElementById("listMsg").style.color = "#4b5563";
+        }
+    </script>
 </body>
+
 </html>
