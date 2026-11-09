@@ -455,7 +455,8 @@
                     <label for="su_password" class="fl">PASSWORD (8 OR MORE CHARACTERS) *</label>
                     <input type="password" id="su_password" name="password" class="field" minlength="8" required
                         onfocus="highlight(this)" onblur="checkStrength(); normal(this)">
-
+                    <p>Strength: <span id="strength" class="stars"></span></p>
+                    
                     <label for="accountType" class="fl">ACCOUNT TYPE *</label>
                     <select id="accountType" name="accountType" class="field" onfocus="highlight(this)" onblur="normal(this)"required>
                         <option value="">-- choose --</option>
