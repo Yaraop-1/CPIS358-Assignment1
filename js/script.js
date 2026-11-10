@@ -320,3 +320,12 @@ function trackContainer() {
 function resetTrack() {
   document.getElementById("trackResult").innerHTML = "";
 }
+
+function changePicture(state) {
+    var pic = document.getElementById("mainpic");
+    if (state == 1) {
+        pic.src = "port2.jpg";
+    } else {
+        pic.src = "hero.jpg";
+    }
+}
